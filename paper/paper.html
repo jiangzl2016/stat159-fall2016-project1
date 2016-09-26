@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="project-1---how-to-write-a-paper">Project 1 - How to Write a Paper</h1>
+<h3 id="stats-159-fall-2016-zhongling-jiang">Stats 159, Fall 2016, Zhongling Jiang</h3>
+<h3 id="id3032197416-emailjzljohn18berkeley.edu">ID:3032197416 Email:jzljohn18@berkeley.edu</h3>
+<h2 id="abstract">Abstract</h2>
+<blockquote>
+<p>The purpose of this paper is to describe a systematic, standardized approach of writing a paper, using computational tools learned so far in this course such as bash, markdown, pandoc, Git, Github and so on. As the paper elaborates on each step of the process, it will also cover on the functionality of each tool, as well as the role they play in writing a paper.<br />
+The main body of this paper contains three parts. The first part -- Introduction part -- explains several main problems that is to be addressed in this paper. It will also provides with reader more background knowledge on these tools so as to prepare them for the following in-depth discussion. The second part -- dicussion -- which is also the most essential part of this paper, brings readers to more specific questions related to paper writing. In this section, the author would raise his personal viewpoint to these questions and descibes in great detail that all the steps he goes through to write a paper. The last part -- conclusions -- briefly summarizes the procedure and closes the discussion with some author's further thought on paper-writing.</p>
+</blockquote>
+<h2 id="introduction">Introduction</h2>
+<p>Different from the concept of high school writing, the university-level writing focuses much more on the paper's <a href="https://en.wikipedia.org/wiki/Reproducibility"><strong>reproducibility</strong></a>. The term reproducibility refers to &quot;<strong>the ability of scientific study to be duplicated, either by the same researcher or by someone else working independently</strong>&quot; <a href="from%20wikipedia:%20https://en.wikipedia.org/wiki/Markdown">1</a>. So the question that how to integrate the idea of reproducibility into writing a paper becomes the key topic that navigates through this paper. An outline of dicussion:</p>
+<ul>
+<li>Building a file directory</li>
+<li>Monitor all the actions</li>
+<li>Create a markdown file</li>
+<li>Possible difficulties and Issues</li>
+</ul>
+<p>Among the four major topics, the first three are more techique-related, while the last one is more empirical. An important concept needed to stressed here is that creating a paper needs much more than a single .txt or .docx file. It needs a set of files, called <strong>directory</strong>, where all files have more complicated nested relationship. Why do we need a directory? The answer is, again, <a href="https://en.wikipedia.org/wiki/Reproducibility"><strong>reproducibility</strong></a>. The author should not only present his/her paper, but also supply all relevant material that is critical to the paper itself. And the purpose of the directory is to help organize all files in a neat way.</p>
+<p>Another topic is about how to monitor user's actions when creating a paper. The purpose is also keeping tracking of what user does at each step so that the user could revise easily. The software that we use here is <a href="https://git-scm.com"><strong>Git</strong></a>, a version control system used for monitoring workflow. In addition, <a href="https://en.wikipedia.org/wiki/Make_software"><strong>Makefile</strong></a> helps simplify the file building process, which will also be covered in this paper.</p>
+<p>At last, the paper will discuss the role of <a href="https://en.wikipedia.org/wiki/GitHub"><strong>Github</strong></a> in the scientific reproducibility, with some demonstrations on pushing and pulling files from Github through the use of Git.</p>
+<p><a href="from%20wikipedia:%20https://en.wikipedia.org/wiki/Markdown">1</a>: the definition from wikipedia: <a href="wikipedia:https://en.wikipedia.org/wiki/Reproducibility">https://en.wikipedia.org/wiki/Reproducibility</a>##Discussion</p>
+<p>The discussion would be mainly led by a series of questions and introductions of softwares that are used in writing a paper.</p>
+<h4 id="makefile">1. Makefile</h4>
+<p>With the help of Makefile, the entire file-building process becomes easier. It resembles the shell programming except that it also focuses on dependencies among files. For example,</p>
+<h4 id="git">2. Git</h4>
+<p>Git is a version control system. Simply speaking, it manages all the changes made to use files, computer programs, and all other information. The role it plays in reproducible research is that it records each step of change that a user performs during his research, e.g. adding/deleting files, editing files, creating html, etc. Here are some code:</p>
+<pre><code>git init
+touch file1.txt
+git add file1.txt  # put file1.txt under monitor
+git commit -m &quot;add file1&quot;   # commit the change</code></pre>
+<p>Another important functionality of Git is that it allows user to undo unintended changes by simply use</p>
+<pre><code>git checkout </code></pre>
+<h4 id="github">3. Github</h4>
+<p>Github is a <strong>web-based</strong> Git repository hosted service <a href="from%20wikipedia:%20https://en.wikipedia.org/wiki/Markdown">1</a>. It uses Git's distribution version control functionality, and adds its own features such as access control and collatoration. User could share their source code through this platfrom by uploading. They could also invite collaborators to work on the code together. In this assignment, I would also upload all files and reports on the Github. This is an important part for upholding scientific reproducibility.</p>
+<p><a href="from%20wikipedia:%20https://en.wikipedia.org/wiki/Markdown">1</a> From Wikipedia: https://en.wikipedia.org/wiki/GitHub #### 4. Pandoc Pandoc converts one type of file into another. For exmaple, it can covert documents in markdown, HTML, Latex, etc. Below are examples:<br />
+Converting markdown file into latex：</p>
+<pre><code> pandoc file.md -f markdown -t latex -s -o file1.tex</code></pre>
+<p>Converting markdown to pdf (without detail -f -t):</p>
+<pre><code> pandoc file1.md -s -o file1.pdf</code></pre>
+<p>With pandoc, we could easily convert files into required formats using command line</p>
+<h4 id="markdown">5. Markdown</h4>
+<p>Markdown is one of the most essential tools for generating the report. More specifically, Markdown is a &quot;<em>markup language with plain text formatting designed syntax</em>&quot;[2] so that it could be converted to an HTML easily. This report is a result of using Markdown for editing all texts.</p>
+<h4 id="questions">6. Questions</h4>
+<ol style="list-style-type: decimal">
+<li>Describe resources is used to get the job done:</li>
+</ol>
+<p>Online tutorials of all above mentioned softwares, and wikipedia.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>What are the easy part? challenging part?</li>
+</ol>
+<p>The easier part is to describe the usage and functionalities of these softwares, including giving code examples. However, the harder part are using git to monitor the entire process, from creating directories to editing all files. Another hard thing is to upload all your changes to Github by using pull and push commands.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Things that I am stuck with:</li>
+</ol>
+<p>Makefile</p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>What is the most time consuimg part?</p></li>
+<li><p>Whether I work with or receive help from others?</p></li>
+<li><p>How much time does it take?</p></li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+</body>
+</html>
