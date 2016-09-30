@@ -39,23 +39,25 @@ Markdown is one of the most essential tools for generating the report. More spec
 
 #### 6. Questions 
 
-1. Describe resources is used to get the job done: 
+* Describe resources that is used to get the job done: 
 
-Online tutorials of all above mentioned softwares, and wikipedia. 
+	Online tutorials of all above mentioned softwares, and wikipedia. 
 
-2.  What are the easy part? challenging part? 
+* What are the easy part? challenging part?   
 
-The easier part is to describe the usage and functionalities of these softwares, including giving code examples. However, the harder part are using git to monitor the entire process, from creating directories to editing all files. Another hard thing is to upload all your changes to Github by using pull and push commands.
+	The easier part is creating directories and empty files in command lines. However, the harder part are using git to monitor the entire process, from creating directories to editing all files. Another hard thing is to upload all your changes to Github by using pull and push commands.
 
-3.  Things that I am stuck with:
+* Things that I am stuck with:
 
-Makefile   
+	Using Makefile to concatnate four markdown files under 'section' directory to create the 'paper.md' under 'paper' directory. It involves file dependence.
 
-4.  What is the most time consuimg part?
+*  What is the most time consuimg part?
+	Describe the usage and functionalities of these softwares, including giving code examples.
 
-5.  Whether I work with or receive help from others? 
 
-6.  How much time does it take?
+*  Whether I work with or receive help from others? 
+
+*  How much time does it take?
 
 
 
