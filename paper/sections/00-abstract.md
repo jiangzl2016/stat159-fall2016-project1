@@ -1,6 +1,7 @@
 #Project 1 - How to Write a Paper
 ###Stats 159, Fall 2016, Zhongling Jiang
-###ID:3032197416 Email:jzljohn18@berkeley.edu
+ID:3032197416   
+Email:jzljohn18@berkeley.edu
 
 ##Abstract
 
