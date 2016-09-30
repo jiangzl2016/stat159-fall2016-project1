@@ -10,7 +10,8 @@
 <body>
 <h1 id="project-1---how-to-write-a-paper">Project 1 - How to Write a Paper</h1>
 <h3 id="stats-159-fall-2016-zhongling-jiang">Stats 159, Fall 2016, Zhongling Jiang</h3>
-<h3 id="id3032197416-emailjzljohn18berkeley.edu">ID:3032197416 Email:jzljohn18@berkeley.edu</h3>
+<p>ID:3032197416<br />
+Email:jzljohn18@berkeley.edu</p>
 <h2 id="abstract">Abstract</h2>
 <blockquote>
 <p>The purpose of this paper is to describe a systematic, standardized approach of writing a paper, using computational tools learned so far in this course such as bash, markdown, pandoc, Git, Github and so on. As the paper elaborates on each step of the process, it will also cover on the functionality of each tool, as well as the role they play in writing a paper.<br />
@@ -27,10 +28,13 @@ The main body of this paper contains three parts. The first part -- Introduction
 <p>Among the four major topics, the first three are more techique-related, while the last one is more empirical. An important concept needed to stressed here is that creating a paper needs much more than a single .txt or .docx file. It needs a set of files, called <strong>directory</strong>, where all files have more complicated nested relationship. Why do we need a directory? The answer is, again, <a href="https://en.wikipedia.org/wiki/Reproducibility"><strong>reproducibility</strong></a>. The author should not only present his/her paper, but also supply all relevant material that is critical to the paper itself. And the purpose of the directory is to help organize all files in a neat way.</p>
 <p>Another topic is about how to monitor user's actions when creating a paper. The purpose is also keeping tracking of what user does at each step so that the user could revise easily. The software that we use here is <a href="https://git-scm.com"><strong>Git</strong></a>, a version control system used for monitoring workflow. In addition, <a href="https://en.wikipedia.org/wiki/Make_software"><strong>Makefile</strong></a> helps simplify the file building process, which will also be covered in this paper.</p>
 <p>At last, the paper will discuss the role of <a href="https://en.wikipedia.org/wiki/GitHub"><strong>Github</strong></a> in the scientific reproducibility, with some demonstrations on pushing and pulling files from Github through the use of Git.</p>
-<p><a href="from%20wikipedia:%20https://en.wikipedia.org/wiki/Markdown">1</a>: the definition from wikipedia: <a href="wikipedia:https://en.wikipedia.org/wiki/Reproducibility">https://en.wikipedia.org/wiki/Reproducibility</a>##Discussion</p>
+<p><a href="from%20wikipedia:%20https://en.wikipedia.org/wiki/Markdown">1</a>: the definition from wikipedia: <a href="wikipedia:https://en.wikipedia.org/wiki/Reproducibility">https://en.wikipedia.org/wiki/Reproducibility</a></p>
+<h2 id="discussion">Discussion</h2>
 <p>The discussion would be mainly led by a series of questions and introductions of softwares that are used in writing a paper.</p>
 <h4 id="makefile">1. Makefile</h4>
-<p>With the help of Makefile, the entire file-building process becomes easier. It resembles the shell programming except that it also focuses on dependencies among files. For example,</p>
+<p>With the help of Makefile, the entire file-making process becomes easier. It resembles the shell programming except that it also focuses on dependencies among files. The code takes the following form: All actions is acted upon a single file target, whose creation may or may not depend on other files.</p>
+<pre><code>[target]: [dependent files]
+        actions </code></pre>
 <h4 id="git">2. Git</h4>
 <p>Git is a version control system. Simply speaking, it manages all the changes made to use files, computer programs, and all other information. The role it plays in reproducible research is that it records each step of change that a user performs during his research, e.g. adding/deleting files, editing files, creating html, etc. Here are some code:</p>
 <pre><code>git init
@@ -39,34 +43,57 @@ git add file1.txt  # put file1.txt under monitor
 git commit -m &quot;add file1&quot;   # commit the change</code></pre>
 <p>Another important functionality of Git is that it allows user to undo unintended changes by simply use</p>
 <pre><code>git checkout </code></pre>
+<div class="figure">
+<img src="../images/git-logo.png" />
+
+</div>
 <h4 id="github">3. Github</h4>
-<p>Github is a <strong>web-based</strong> Git repository hosted service <a href="from%20wikipedia:%20https://en.wikipedia.org/wiki/Markdown">1</a>. It uses Git's distribution version control functionality, and adds its own features such as access control and collatoration. User could share their source code through this platfrom by uploading. They could also invite collaborators to work on the code together. In this assignment, I would also upload all files and reports on the Github. This is an important part for upholding scientific reproducibility.</p>
-<p><a href="from%20wikipedia:%20https://en.wikipedia.org/wiki/Markdown">1</a> From Wikipedia: https://en.wikipedia.org/wiki/GitHub #### 4. Pandoc Pandoc converts one type of file into another. For exmaple, it can covert documents in markdown, HTML, Latex, etc. Below are examples:<br />
+<p>Github is a <strong>web-based</strong> Git repository hosted service <a href="from%20wikipedia:%20https://en.wikipedia.org/wiki/Markdown">1</a>. It uses Git's distribution version control functionality, and adds its own features such as access control and collatoration. User could share their source code through this platfrom by uploading. They could also invite collaborators to work on the code together. In this assignment, I would also upload all files and reports on the Github. This is an important part for upholding scientific reproducibility. The way to use Github by using Git is following:</p>
+<p>After having committed all changes in Git, we push the local repository as well as all commit messages to Github:</p>
+<pre><code>git remote add [SSH URL]
+git push origin master </code></pre>
+<p><a href="from%20wikipedia:%20https://en.wikipedia.org/wiki/Markdown">1</a> From Wikipedia: https://en.wikipedia.org/wiki/GitHub</p>
+<div class="figure">
+<img src="../images/github-logo.png" />
+
+</div>
+<h4 id="pandoc">4. Pandoc</h4>
+<p>Pandoc converts one type of file into another. For exmaple, it can covert documents in markdown, HTML, Latex, etc. Below are examples:<br />
 Converting markdown file into latex：</p>
 <pre><code> pandoc file.md -f markdown -t latex -s -o file1.tex</code></pre>
 <p>Converting markdown to pdf (without detail -f -t):</p>
 <pre><code> pandoc file1.md -s -o file1.pdf</code></pre>
 <p>With pandoc, we could easily convert files into required formats using command line</p>
+<div class="figure">
+<img src="../images/git-logo.png" />
+
+</div>
 <h4 id="markdown">5. Markdown</h4>
 <p>Markdown is one of the most essential tools for generating the report. More specifically, Markdown is a &quot;<em>markup language with plain text formatting designed syntax</em>&quot;[2] so that it could be converted to an HTML easily. This report is a result of using Markdown for editing all texts.</p>
+<div class="figure">
+<img src="../images/markdown-logo.png" />
+
+</div>
 <h4 id="questions">6. Questions</h4>
-<ol style="list-style-type: decimal">
-<li>Describe resources is used to get the job done:</li>
-</ol>
-<p>Online tutorials of all above mentioned softwares, and wikipedia.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>What are the easy part? challenging part?</li>
-</ol>
-<p>The easier part is to describe the usage and functionalities of these softwares, including giving code examples. However, the harder part are using git to monitor the entire process, from creating directories to editing all files. Another hard thing is to upload all your changes to Github by using pull and push commands.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>Things that I am stuck with:</li>
-</ol>
-<p>Makefile</p>
-<ol start="4" style="list-style-type: decimal">
-<li><p>What is the most time consuimg part?</p></li>
-<li><p>Whether I work with or receive help from others?</p></li>
-<li><p>How much time does it take?</p></li>
-</ol>
+<ul>
+<li><p>Describe resources that is used to get the job done:</p>
+<p>Online tutorials of all above mentioned softwares, consulting with professor and teaching assistant, and wikipedia</p></li>
+<li><p>What are the easy part? challenging part?</p>
+<p>The easier part is creating directories and empty files in command lines. However, the harder part are using git to monitor the entire process, from creating directories to editing all files. Another hard thing is to upload all your changes to Github by using pull and push commands.</p></li>
+<li><p>Things that I am stuck with:</p>
+<p>Using Makefile to concatnate four markdown files under 'section' directory to create the 'paper.md' under 'paper' directory. It involves file dependence.<br />
+Secondly, it takes me quite a long time before I find I do not have a public SSH key to push any document. So there has been a time I am wondering why I could not push anything to Github.</p></li>
+<li><p>What is the most time consuimg part?<br />
+Describe the usage and functionalities of these softwares, including giving code examples.</p></li>
+<li><p>Whether I work with or receive help from others?<br />
+Lab assistant Sindhuja gives me help on using Makefile to generate file dependence.</p></li>
+<li><p>How much time does it take?<br />
+It takes several days to finish.</p></li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
+<p>The report mainly introduces several useful tools in systematically creating a paper. To summarize, the process will experience the following steps:</p>
+<p>Firstly, use command line to create the structure of the file. As soon as the author creates the project folder, he/she uses <strong>git init</strong> to start monitoring all files.<br />
+Secondly, create empty files that are needed and use Makefile to create file dependency among all files. During the process, the author should repeatedly use <strong>git add</strong> and <strong>git commit</strong> to record all changes to the files.<br />
+Thirdly, use pandoc to convert</p>
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 ##Discussion
 
 The discussion would be mainly led by a series of questions and introductions of softwares that are used in writing a paper. 
@@ -20,7 +19,7 @@ Another important functionality of Git is that it allows user to undo unintended
 
     git checkout 
 
-![Git Logo]: (../images/git-logo.png)
+![](../images/git-logo.png)
 
 
 #### 3. Github
@@ -30,9 +29,11 @@ After having committed all changes in Git, we push the local repository as well 
 
     git remote add [SSH URL]
     git push origin master 
+[1] From Wikipedia: https://en.wikipedia.org/wiki/GitHub  
 
-![Github Logo]: (../images/github-logo.png)
-[1] From Wikipedia: https://en.wikipedia.org/wiki/GitHub
+![](../images/github-logo.png)
+
+
 
 #### 4. Pandoc
 Pandoc converts one type of file into another. For exmaple, it can covert documents in markdown, HTML, Latex, etc. Below are examples:  
@@ -44,14 +45,14 @@ Converting markdown to pdf (without detail -f -t):
      pandoc file1.md -s -o file1.pdf
 With pandoc, we could easily convert files into required formats using command line
 
-![Pandoc Logo): (../images/git-logo.png)
+![](../images/git-logo.png)
 
 #### 5. Markdown 
 Markdown is one of the most essential tools for generating the report. More specifically, Markdown is a "_markup language with plain text formatting designed syntax_"[2] so that it could be converted to an HTML easily. This report is a result of using Markdown for editing all texts.
 
  [1]: from wikipedia: https://en.wikipedia.org/wiki/Markdown
  
-![Maekdown Logo]: (../images/markdown-logo.png)
+![](../images/markdown-logo.png)
 
 #### 6. Questions 
 

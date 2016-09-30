@@ -13,4 +13,6 @@ Another topic is about how to monitor user's actions when creating a paper. The 
 
 At last, the paper will discuss the role of [**Github**](https://en.wikipedia.org/wiki/GitHub) in the scientific reproducibility, with some demonstrations on pushing and pulling files from Github through the use of Git. 
 
-[1]: the definition from wikipedia:  [https://en.wikipedia.org/wiki/Reproducibility](wikipedia:https://en.wikipedia.org/wiki/Reproducibility)
+[1]: the definition from wikipedia:  [https://en.wikipedia.org/wiki/Reproducibility](wikipedia:https://en.wikipedia.org/wiki/Reproducibility)  
+
+
